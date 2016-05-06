@@ -7,9 +7,11 @@
     <!--width: sets the width to the device screen width, initial-scale : set the initial zoom of the page-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/applicant.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
 </head>
 
 <body ng-app="applicant">
@@ -52,7 +54,7 @@
                 <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
                 <li><a data-toggle="pill" href="#menu1">Menu1</a></li>
                 <li><a data-toggle="pill" href="#pinfo">Personal Info</a></li>
-                <li><a data-toggle="pill" href="#menu3">Menu3</a></li>
+                <li><a data-toggle="pill" href="#cardCreate">Card Create</a></li>
             </ul>
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
@@ -97,8 +99,11 @@
                     <h2>Personal Info</h2>
                     <div ng-include src="'partials/addApplicant.html'"></div>
                 </div>
-                <div id="menu3" class="tab-pane">
-                    <h2>Menu3</h2>
+                <div id="cardCreate" class="tab-pane">
+
+                    <div ng-include src="'partials/cardCreation.html'"></div>
+
+
                 </div>
             </div>
 
