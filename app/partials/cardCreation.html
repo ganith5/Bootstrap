@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Creation</title>
+    <style>
+        .smbox { width: 75px; height: 75px; border: 3px solid #00A000;box-sizing: border-box; }
+
+        .bgbox { width: 500px; height: 300px; border: 3px solid #00A000; float: inherit}
+
+
+        ul#gallery li {
+            display:inline;
+        }
+
+        ul#gallery li div {
+            background-color: yellow;
+            display: inline;
+        }
+    </style>
+    <script>
+        $(function(){
+            console.log("in drag");
+            $('#photoDiv').draggable();
+            $('#photoDiv1').draggable();
+            $('#cardTemplateLogo').droppable({
+                accept: "#photoDiv",
+                drop: function(event,ui) {
+                    $(this)
+                            .addClass("ui-state-highlight")
+                            .find("p").html("Dropped!");
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div>
+                <ul id="gallery">
+                    <li><div id="photoDiv" class="smbox">hello!</div></li>
+                    <li><div id="photoDiv1" class="smbox">hello!</div></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+
+            <div id="cardTemplateDiv" class="bgbox">
+                <div id="cardTempPhoto" class="smbox" style="float: left">
+                    <p>Drop here!</p>
+                </div>
+                <div id="cardTempLogo" class="smbox" style="float: left">
+                    <p>Drop here!</p>
+                </div>
+                <div id="cardTempinfo" style="float: right">
+                    <textarea id="pInfo" style="bottom: 70px"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
